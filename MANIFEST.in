@@ -3,5 +3,5 @@ include README
 include MANIFEST.in
 include requirements_Linux.txt
 include setup.py
-include dist/dbus-python-1.1.1.tar.gz
+include deps/dbus-python-1.1.1.tar.gz
 recursive-include ps-client *.py

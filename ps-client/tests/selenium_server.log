@@ -1,0 +1,33 @@
+14:04:20.054 INFO - Java: Oracle Corporation 22.1-b02
+14:04:20.056 INFO - OS: Linux 3.6.6-1-ARCH amd64
+14:04:20.066 INFO - v2.21.0, with Core v2.21.0. Built from revision 16552
+14:04:20.205 INFO - RemoteWebDriver instances should connect to: http://127.0.0.1:4444/wd/hub
+14:04:20.206 INFO - Version Jetty/5.1.x
+14:04:20.207 INFO - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+14:04:20.208 INFO - Started HttpContext[/selenium-server,/selenium-server]
+14:04:20.208 INFO - Started HttpContext[/,/]
+14:04:20.237 INFO - Started org.openqa.jetty.jetty.servlet.ServletHandler@76f7c5
+14:04:20.237 INFO - Started HttpContext[/wd,/wd]
+14:04:20.243 INFO - Started SocketListener on 0.0.0.0:4444
+14:04:20.243 INFO - Started org.openqa.jetty.jetty.Server@b24044e
+14:04:20.690 INFO - Checking Resource aliases
+14:04:20.693 INFO - Checking Resource aliases
+14:04:20.698 INFO - Command request: getNewBrowserSession[*firefox, https://127.0.0.1:5000/, , addCustomRequestHeaders=true] on session null
+14:04:20.702 INFO - creating new remote session
+14:04:20.727 INFO - Allocated session 9e388eb00602409fa8fb4d3761283e09 for https://127.0.0.1:5000/, launching...
+14:04:20.829 INFO - Preparing Firefox profile...
+14:04:22.582 INFO - Launching Firefox...
+14:04:24.388 INFO - Got result: OK,9e388eb00602409fa8fb4d3761283e09 on session 9e388eb00602409fa8fb4d3761283e09
+14:04:24.404 INFO - Command request: setTimeout[30000.0, ] on session 9e388eb00602409fa8fb4d3761283e09
+14:04:24.411 INFO - Got result: OK on session 9e388eb00602409fa8fb4d3761283e09
+14:04:24.414 INFO - Command request: open[https://127.0.0.1:5000/, True] on session 9e388eb00602409fa8fb4d3761283e09
+14:04:26.312 INFO - Started SocketListener on 0.0.0.0:60260
+14:04:26.500 INFO - Started SocketListener on 0.0.0.0:50271
+14:04:26.657 INFO - Got result: OK on session 9e388eb00602409fa8fb4d3761283e09
+14:04:26.663 INFO - Command request: isTextPresent[PowerServer, ] on session 9e388eb00602409fa8fb4d3761283e09
+14:04:26.674 INFO - Got result: OK,true on session 9e388eb00602409fa8fb4d3761283e09
+14:04:26.690 INFO - Command request: shutDownSeleniumServer[, ] on session null
+14:04:26.691 INFO - Shutdown command received
+14:04:26.692 INFO - Got result: OK on session null
+14:04:26.696 INFO - initiating shutdown
+14:04:27.197 INFO - Shutting down...

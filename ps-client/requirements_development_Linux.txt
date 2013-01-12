@@ -1,0 +1,13 @@
+CherryPy==3.2.2
+SQLAlchemy==0.7.8
+esky==0.9.7
+ipdb==0.7
+ipython==0.13.1
+netifaces==0.5
+psutil==0.5.1
+py==1.4.12
+pyOpenSSL==0.13
+pytest==2.3.4
+robotframework==2.7.5
+robotframework-seleniumlibrary==2.9.1
+wsgiref==0.1.2

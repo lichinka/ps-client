@@ -1,0 +1,7 @@
+*.swp
+bin
+doc
+ref
+include
+lib
+share

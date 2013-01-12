@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20121129 14:04:20.038" generator="Robot 2.7.5 (Python 2.7.3 on linux2)">
+<suite source="/home/luka/etc/saion/ps-client/ps-client/tests/test_daemon.txt" id="s1" name="Test Daemon">
+<kw type="setup" name="Start Dependencies" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="CherryPyTestingLib.Setup Cherrypy" timeout="">
+<doc>Configures the CherryPy engine and server using</doc>
+<arguments>
+<arg>daemon.config</arg>
+</arguments>
+<status status="PASS" endtime="20121129 14:04:20.383" starttime="20121129 14:04:20.308"></status>
+</kw>
+<kw type="kw" name="CherryPyTestingLib.Start Cherrypy" timeout="">
+<doc>Starts a CherryPy engine.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20121129 14:04:20.384" level="INFO">[29/Nov/2012:14:04:20] ENGINE Bus STARTING</msg>
+<msg timestamp="20121129 14:04:20.385" level="INFO">[29/Nov/2012:14:04:20] ENGINE Started monitor thread '_TimeoutMonitor'.</msg>
+<msg timestamp="20121129 14:04:20.498" level="INFO">[29/Nov/2012:14:04:20] ENGINE Serving on 127.0.0.1:5000</msg>
+<msg timestamp="20121129 14:04:20.498" level="INFO">[29/Nov/2012:14:04:20] ENGINE Bus STARTED</msg>
+<status status="PASS" endtime="20121129 14:04:20.498" starttime="20121129 14:04:20.383"></status>
+</kw>
+<status status="PASS" endtime="20121129 14:04:20.498" starttime="20121129 14:04:20.308"></status>
+</kw>
+<test id="s1-t1" timeout="" name="Home page over HTTPS responds">
+<kw type="setup" name="CherryPyTestingLib.Mount Application" timeout="">
+<doc>Mounts an application to be tested. `appmod` is the name</doc>
+<arguments>
+<arg>daemon</arg>
+<arg>App</arg>
+</arguments>
+<status status="PASS" endtime="20121129 14:04:20.650" starttime="20121129 14:04:20.500"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Open Browser" timeout="">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<msg timestamp="20121129 14:04:26.659" level="INFO">Opening browser 'firefox' to base url 'https://127.0.0.1:5000/'</msg>
+<status status="PASS" endtime="20121129 14:04:26.660" starttime="20121129 14:04:20.650"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain" timeout="">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${MSG}</arg>
+</arguments>
+<msg timestamp="20121129 14:04:26.676" level="INFO">Current page contains text 'PowerServer'.</msg>
+<status status="PASS" endtime="20121129 14:04:26.677" starttime="20121129 14:04:26.660"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20121129 14:04:26.677" critical="yes" starttime="20121129 14:04:20.498"></status>
+</test>
+<test id="s1-t2" timeout="" name="Apply state fails with unknown state">
+<kw type="setup" name="CherryPyTestingLib.Mount Application" timeout="">
+<doc>Mounts an application to be tested. `appmod` is the name</doc>
+<arguments>
+<arg>daemon</arg>
+<arg>App</arg>
+</arguments>
+<status status="PASS" endtime="20121129 14:04:26.681" starttime="20121129 14:04:26.680"></status>
+</kw>
+<kw type="kw" name="Open Page" timeout="">
+<doc></doc>
+<arguments>
+<arg>${HOST}/state/apply/unknown</arg>
+</arguments>
+<msg timestamp="20121129 14:04:26.682" level="FAIL">No keyword with name 'Open Page' found.</msg>
+<status status="FAIL" endtime="20121129 14:04:26.682" starttime="20121129 14:04:26.682"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="FAIL" endtime="20121129 14:04:26.682" critical="yes" starttime="20121129 14:04:26.678">No keyword with name 'Open Page' found.</status>
+</test>
+<test id="s1-t3" timeout="" name="Status responds">
+<kw type="setup" name="CherryPyTestingLib.Mount Application" timeout="">
+<doc>Mounts an application to be tested. `appmod` is the name</doc>
+<arguments>
+<arg>daemon</arg>
+<arg>App</arg>
+</arguments>
+<status status="PASS" endtime="20121129 14:04:26.685" starttime="20121129 14:04:26.684"></status>
+</kw>
+<kw type="kw" name="Open Page" timeout="">
+<doc></doc>
+<arguments>
+<arg>${HOST}/status</arg>
+</arguments>
+<msg timestamp="20121129 14:04:26.686" level="FAIL">No keyword with name 'Open Page' found.</msg>
+<status status="FAIL" endtime="20121129 14:04:26.686" starttime="20121129 14:04:26.686"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="FAIL" endtime="20121129 14:04:26.687" critical="yes" starttime="20121129 14:04:26.683">No keyword with name 'Open Page' found.</status>
+</test>
+<kw type="teardown" name="Shutdown Dependencies" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="SeleniumLibrary.Stop Selenium Server" timeout="">
+<doc>Stops the selenium server (and closes all browsers).</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20121129 14:04:26.695" starttime="20121129 14:04:26.688"></status>
+</kw>
+<kw type="kw" name="CherryPyTestingLib.Exit Cherrypy" timeout="">
+<doc>Terminates a CherryPy engine.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20121129 14:04:26.696" level="INFO">[29/Nov/2012:14:04:26] ENGINE Bus STOPPING</msg>
+<msg timestamp="20121129 14:04:27.820" level="INFO">[29/Nov/2012:14:04:27] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 5000)) shut down</msg>
+<msg timestamp="20121129 14:04:27.820" level="INFO">[29/Nov/2012:14:04:27] ENGINE Stopped thread '_TimeoutMonitor'.</msg>
+<msg timestamp="20121129 14:04:27.821" level="INFO">[29/Nov/2012:14:04:27] ENGINE Bus STOPPED</msg>
+<msg timestamp="20121129 14:04:27.821" level="INFO">[29/Nov/2012:14:04:27] ENGINE Bus EXITING</msg>
+<msg timestamp="20121129 14:04:27.821" level="INFO">[29/Nov/2012:14:04:27] ENGINE Bus EXITED</msg>
+<status status="PASS" endtime="20121129 14:04:27.821" starttime="20121129 14:04:26.695"></status>
+</kw>
+<status status="PASS" endtime="20121129 14:04:27.822" starttime="20121129 14:04:26.687"></status>
+</kw>
+<doc></doc>
+<metadata>
+</metadata>
+<status status="FAIL" endtime="20121129 14:04:27.822" starttime="20121129 14:04:20.039"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="2" pass="1">Critical Tests</stat>
+<stat fail="2" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="2" pass="1" id="s1" name="Test Daemon">Test Daemon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

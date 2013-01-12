@@ -1,0 +1,40 @@
+#
+# This tests use the Robot Framework and its Selenium Library.
+# Documentation is available here
+#
+#   http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html
+#   http://code.google.com/p/robotframework-seleniumlibrary/wiki/LibraryDocumentation
+#
+***Settings***
+| *Setting*         | *Value*               | *Argument*                | *Argument*
+| Library           | SeleniumLibrary       | timeout=30                |
+| Library           | CherryPyTestingLib    |                           |
+| Suite Setup       | Start Dependencies    |                           |
+| Suite Teardown    | Shutdown Dependencies |                           |
+| Test Setup        | Mount Application     | daemon                    | App
+
+
+***Variables***
+| ${MSG}  |   PowerServer
+| ${HOST} |   https://127.0.0.1:5000/
+
+
+***Test Cases***
+| Home page over HTTPS responds | Open Browser          | ${HOST}
+|                               | Page Should Contain   | ${MSG}
+| Apply state fails with unknown state | Open Page          | ${HOST}/state/apply/unknown
+|                                      | Page Should Contain   | Cannot apply
+| Status responds   | Open Page             | ${HOST}/status
+|                   | Page Should Contain   | Started at
+|                 | Close All Browsers    |      
+
+
+***Keywords***
+| Start Dependencies |                       |
+|                    | Setup CherryPy        | daemon.config
+|                    | Start CherryPy        |
+
+
+| Shutdown Dependencies  |
+|                        | Stop Selenium Server
+|                        | Exit CherryPy

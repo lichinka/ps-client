@@ -1,7 +1,0 @@
-Flask==0.9
-Jinja2==2.6
-Werkzeug==0.8.3
-esky==0.9.7
-py==1.4.9
-pytest==2.2.4
-wsgiref==0.1.2

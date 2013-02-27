@@ -46,9 +46,9 @@ def get_requirements ( ):
     with open (REQUIRE, 'r') as f:
         ret_value = []
         for pkg in f:
-            if 'file://' not in pkg:
+            pkg = pkg.strip ( )
+            if len (pkg) > 0 and pkg[0] != '#':
                 ret_value.append (pkg)
-        print ret_value
         return ret_value
     f.close ( )
 
@@ -115,6 +115,7 @@ def main ( ):
         description='Client module of the PowerServer system',
         long_description=get_description ( ),
         install_requires=get_requirements ( ),
+        dependency_links=["git+git://github.com/lichinka/dbus-python.git#egg=dbus-python-10.1.1"],
         scripts = ['ps-client/daemon.py'],
         packages=['ps-client'],
         cmdclass = {'test': PyTest},

@@ -1,3 +1,12 @@
+#
+# Custom version of the DBus package
+#
+#./deps/dbus-python-1.1.1.tar.gz==1.1.1
+dbus-python==10.1.1
+
+#
+# Standard packages from the PIP public repository
+#
 CherryPy==3.2.2
 SQLAlchemy==0.7.8
 esky==0.9.7
